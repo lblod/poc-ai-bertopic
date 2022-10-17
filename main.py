@@ -1,9 +1,21 @@
+import torch
 from bertopic import BERTopic
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sentence_transformers import SentenceTransformer
 
 from custom_typing import *
+
+# Setting random seeds in advance
+seed = 1
+import random
+import numpy as np
+
+random.seed(seed)
+np.random.seed(seed)
+
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
 
 app = FastAPI()
 
