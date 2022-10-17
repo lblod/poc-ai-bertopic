@@ -1,4 +1,6 @@
 # poc-ai-bertopic-api
+https://build.redpencil.io/api/badges/lblod/poc-ai-bertopic/status.svg
+
 This repository contains the fast-api code for the bertopic API,
 
 ## Getting started
