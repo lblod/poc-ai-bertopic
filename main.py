@@ -1,7 +1,7 @@
 from bertopic import BERTopic
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from transformers import AutoModel
+from sentence_transformers import SentenceTransformer
 
 from custom_typing import *
 
@@ -11,7 +11,9 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, 
     allow_headers=["*"], )
 
 # INIT: loading required models for BERTopic -> these models are loaded from a shared mount.
-model = AutoModel.from_pretrained("/models/RobertaModel_PDF_V1")
+model = SentenceTransformer("/models/RobertaModel_PDF_V1")
+model.eval()
+
 topic_model = BERTopic.load("/models/topic.model", embedding_model=model)
 
 # Instantiate the topic_info_dataframe, this dataframe contains relevant topic information and is static (precalculated
