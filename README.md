@@ -7,6 +7,12 @@ In order to run this code, you will either have to build it localy or use our bu
 ### COPY model from GCP bucket
 An easy way to download files from a google cloud bucket, is by installing the gsultil client, You can find more information on how to install this client [here](https://cloud.google.com/storage/docs/gsutil_install).
 
+Gsutil command(s):
+```
+gsutil -m cp -r gs://abb-textgen-models/topioc.model .
+gsutil -m cp -r gs://abb-textgen-models/RobertaModel_PDF_V1 .
+```
+
 ### Starting the docker container
 First you pull the container (can be skipped --> will be pulled either if not present when executing the run command)
 ```
